@@ -1,0 +1,9 @@
+<b>Zaawansowany Przewodnik Po Funkcjach Mzetczanu Spóźniasu</b>
+<ul>
+<li><code>!mzk help</code> - Wyświetla tą liste komend</li>
+<li><code>!mzk busy</code> - Lista wszystkich busów</li>
+<li><code>!mzk przystanek [linia] [do? true/false]</code> - Lista przystanków dla danego busa.</li>
+<li><code>!mzk rozklad [linia] [do? true/false] [przystanek]</code> - Rozkład jazdy dla danego autobusu, na danym przystanku</li>
+</ul>
+
+p.s. Zamiast <code>!mzk help</code> możesz użyć <code>!mzk h</code>...
