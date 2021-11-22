@@ -39,10 +39,9 @@ type GetAtomicScheduleJSON struct {
 }
 
 type Departure struct {
-	Brigade                  string `json:"brigade"`
-	CourseID                 int64  `json:"courseId"`
-	CourseStartSec           int64  `json:"courseStartSec"`
-	CourseStartString        string
+	Brigade                  string        `json:"brigade"`
+	CourseID                 int64         `json:"courseId"`
+	CourseStartSec           int64         `json:"courseStartSec"`
 	ExpectedVehicleType      string        `json:"expectedVehicleType"`
 	Letter                   string        `json:"letter"`
 	MultipleLegends          []interface{} `json:"multipleLegends"`
@@ -51,11 +50,11 @@ type Departure struct {
 	OrderInCourse            int64         `json:"orderInCourse"`
 	OverloadedID             interface{}   `json:"overloadedId"`
 	ScheduledDepartureSec    int64         `json:"scheduledDepartureSec"`
-	ScheduledDepartureString string
-	TransportType            string      `json:"transportType"`
-	VariantID                int64       `json:"variantId"`
-	Visible                  bool        `json:"visible"`
-	WorkaroundID             interface{} `json:"workaroundId"`
+	ScheduledDepartureString string        `json:"scheduledDepartureString"`
+	TransportType            string        `json:"transportType"`
+	VariantID                int64         `json:"variantId"`
+	Visible                  bool          `json:"visible"`
+	WorkaroundID             interface{}   `json:"workaroundId"`
 }
 
 type BySec []Departure
@@ -72,6 +71,7 @@ func GetAtomicSchedule(symbol string) (sched GetAtomicScheduleJSON) {
 			hours := int64(sched.LineSchedules[i].Departures[j].ScheduledDepartureSec / 60 / 60)
 			minutes := (sched.LineSchedules[i].Departures[j].ScheduledDepartureSec - (hours * 60 * 60)) / 60
 			sched.LineSchedules[i].Departures[j].ScheduledDepartureString = fmt.Sprintf("%02d:%02d", hours, minutes)
+
 		}
 	}
 	return
